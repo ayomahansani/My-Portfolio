@@ -8,6 +8,9 @@ import ReactIcon from "@assets/icons/react.svg";
 import ChromeIcon from "@assets/icons/chrome.svg";
 import GithubIcon from "@assets/icons/github.svg";
 import {TechIcon} from "@/components/TechIcon";
+import mapImage from "@assets/images/map.png";
+import Image from "next/image";
+import memojiGirl from "@assets/images/memoji-avatar-4.png";
 
 const toolBoxItems = [
     {
@@ -62,6 +65,10 @@ export const AboutSection = () => {
                       <h3>Beyond the Code</h3>
                       <p>Explore my interests and hobbies beyond the digital realm.</p>
                   </div>
+              </Card>
+              <Card>
+                <Image src={mapImage} alt={"map"} />
+                <Image src={memojiGirl} alt={"girl memoji"} />
               </Card>
           </div>
       </div>
