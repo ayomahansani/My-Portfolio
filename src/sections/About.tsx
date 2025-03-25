@@ -11,6 +11,7 @@ import {TechIcon} from "@/components/TechIcon";
 import mapImage from "@assets/images/map.png";
 import Image from "next/image";
 import memojiGirl from "@assets/images/memoji-avatar-4.png";
+import {CardHeader} from "@/components/CardHeader";
 
 const toolBoxItems = [
     {
@@ -39,37 +40,70 @@ const toolBoxItems = [
     }
 ]
 
+const hobbies = [
+    {
+        title: 'Painting',
+        emoji: '🎨'
+    },
+    {
+        title: 'Photography',
+        emoji: '📷'
+    },
+    {
+        title: 'Gaming',
+        emoji: '🎮'
+    },
+    {
+        title: 'Hiking',
+        emoji: '🧗🏽'
+    },
+    {
+        title: 'Music',
+        emoji: '🎶'
+    },
+    {
+        title: 'Fitness',
+        emoji: '🏋🏼‍♀️'
+    },
+    {
+        title: 'Reading',
+        emoji: '‍📚️'
+    }
+]
+
 export const AboutSection = () => {
   return (
-      <div className="pb-96">
-          <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
+      <div className="py-20">
           <div>
-              <Card>
-                  <div>
-                      <StarIcon />
-                      <h3>My Toolbox</h3>
-                      <p>Explore the technologies and tools I use to craft exceptional digital experiences.</p>
-                  </div>
-                  <div>
-                      {toolBoxItems.map(item => (
-                          <div key={item.title}>
-                              <TechIcon component={item.iconType} />
-                              <span>{item.title}</span>
-                          </div>
-                      ))}
-                  </div>
-              </Card>
-              <Card>
-                  <div>
-                      <StarIcon/>
-                      <h3>Beyond the Code</h3>
-                      <p>Explore my interests and hobbies beyond the digital realm.</p>
-                  </div>
-              </Card>
-              <Card>
-                <Image src={mapImage} alt={"map"} />
-                <Image src={memojiGirl} alt={"girl memoji"} />
-              </Card>
+              <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
+              <div className="mt-20">
+                  <Card>
+                      <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." />
+                      <div>
+                          {toolBoxItems.map(item => (
+                              <div key={item.title} className="inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg">
+                                  <TechIcon component={item.iconType} />
+                                  <span className="font-semibold">{item.title}</span>
+                              </div>
+                          ))}
+                      </div>
+                  </Card>
+                  <Card>
+                      <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
+                      <div>
+                          {hobbies.map(hobby => (
+                              <div key={hobby.title}>
+                                  <span>{hobby.title}</span>
+                                  <span>{hobby.emoji}</span>
+                              </div>
+                          ))}
+                      </div>
+                  </Card>
+                  <Card>
+                      <Image src={mapImage} alt={"map"} />
+                      <Image src={memojiGirl} alt={"girl memoji"} />
+                  </Card>
+              </div>
           </div>
       </div>
   );
