@@ -12,6 +12,7 @@ import mapImage from "@assets/images/map.png";
 import Image from "next/image";
 import memojiGirl from "@assets/images/memoji-avatar-4.png";
 import {CardHeader} from "@/components/CardHeader";
+import {ToolBoxItems} from "@/components/ToolBoxItems";
 
 const toolBoxItems = [
     {
@@ -76,17 +77,19 @@ export const AboutSection = () => {
       <div className="py-20">
           <div>
               <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
-              <div className="mt-20">
-                  <Card>
-                      <CardHeader title="My Toolbox" description="Explore the technologies and tools I use to craft exceptional digital experiences." />
-                      <div>
-                          {toolBoxItems.map(item => (
-                              <div key={item.title} className="inline-flex items-center gap-4 py-2 px-3 outline outline-2 outline-white/10 rounded-lg">
-                                  <TechIcon component={item.iconType} />
-                                  <span className="font-semibold">{item.title}</span>
-                              </div>
-                          ))}
-                      </div>
+              <div className="mt-20 flex flex-col gap-8">
+                  <Card className="h-[320px] p-0">
+                      <CardHeader
+                          title="My Toolbox"
+                          description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                          className="px-6 pt-6"
+                      />
+                      <ToolBoxItems items={toolBoxItems} className="mt-6"/>
+                      <ToolBoxItems
+                          items={toolBoxItems}
+                          className="mt-6"
+                          itemsWrapperClassName="-translate-x-1/2"
+                      />
                   </Card>
                   <Card>
                       <CardHeader title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
