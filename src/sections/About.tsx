@@ -86,7 +86,7 @@ const hobbies = [
 
 export const AboutSection = () => {
   return (
-      <div className="py-20">
+      <div className="py-20 lg:py-28">
           <div className="container">
               <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
               <div className="mt-20 flex flex-col gap-8">
@@ -103,8 +103,8 @@ export const AboutSection = () => {
                           itemsWrapperClassName="-translate-x-1/2"
                       />
                   </Card>
-                  <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-                      <Card className="h-[320px] p-0 flex flex-col col-span-3">
+                  <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
+                      <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
                           <CardHeader className="px-6 py-6" title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
                           <div className="relative flex-1">
                               {hobbies.map(hobby => (
@@ -121,7 +121,7 @@ export const AboutSection = () => {
                               ))}
                           </div>
                       </Card>
-                      <Card className="h-[320px] p-0 relative col-span-2">
+                      <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
                           <Image src={mapImage} alt={"map"} className="h-full w-full object-cover object-left-top"/>
                           <div
                               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20
