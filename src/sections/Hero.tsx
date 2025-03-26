@@ -9,53 +9,60 @@ import {HeroOrbit} from "@/components/HeroOrbit";
 export const HeroSection = () => {
   return (
       <div className="py-32 md:py-48 lg:py-38 relative z-0 overflow-x-clip">
-          <div
-              className="absolute inset-0 -z-30 opacity-5"
-              style={{backgroundImage: `url(${grainImage.src})`}}
-          ></div>
-          <div className="size-[620px] hero-ring"></div>
-          <div className="size-[820px] hero-ring"></div>
-          <div className="size-[1020px] hero-ring"></div>
-          <div className="size-[1220px] hero-ring"></div>
-          <div className="size-[1420px] hero-ring"></div>
-          <HeroOrbit size={718} rotation={-72}>
-              <StarIcon className="size-28 text-emerald-300"/>
-          </HeroOrbit>
-          <HeroOrbit size={520} rotation={20}>
-              <StarIcon className="size-12 text-emerald-300"/>
-          </HeroOrbit>
-          <HeroOrbit size={570} rotation={98}>
-              <StarIcon className="size-8 text-emerald-300"/>
-          </HeroOrbit>
-          <HeroOrbit size={430} rotation={-14}>
-              <SparkleIcon className="size-8 text-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={440} rotation={79}>
-              <SparkleIcon className="size-5 text-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={530} rotation={178}>
-              <SparkleIcon className="size-10 text-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={700} rotation={144}>
-              <SparkleIcon className="size-14 text-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={720} rotation={90}>
-              <div className="size-3 rounded-full bg-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={520} rotation={-41}>
-              <div className="size-2 rounded-full bg-emerald-300/20"/>
-          </HeroOrbit>
-          <HeroOrbit size={650} rotation={-5}>
-              <div className="size-2 rounded-full bg-emerald-300/20"/>
-          </HeroOrbit>
+          <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
+              <div
+                  className="absolute inset-0 -z-30 opacity-5"
+                  style={{backgroundImage: `url(${grainImage.src})`}}
+              ></div>
+              <div className="size-[620px] hero-ring"></div>
+              <div className="size-[820px] hero-ring"></div>
+              <div className="size-[1020px] hero-ring"></div>
+              <div className="size-[1220px] hero-ring"></div>
+              <div className="size-[1420px] hero-ring"></div>
+
+              <HeroOrbit size={430} rotation={-14} shouldOrbit orbitDuration="30s" shouldSpin spinDuration="3s">
+                  <SparkleIcon className="size-8 text-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={440} rotation={79} shouldOrbit orbitDuration="32s" shouldSpin spinDuration="3s">
+                  <SparkleIcon className="size-5 text-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
+                  <div className="size-2 rounded-full bg-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={530} rotation={178} shouldOrbit orbitDuration="36s" shouldSpin spinDuration="3s">
+                  <SparkleIcon className="size-10 text-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={520} rotation={20} shouldOrbit orbitDuration="38s" shouldSpin spinDuration="6s">
+                  <StarIcon className="size-12 text-emerald-300"/>
+              </HeroOrbit>
+              <HeroOrbit size={570} rotation={98} shouldOrbit orbitDuration="40s" shouldSpin spinDuration="6s">
+                  <StarIcon className="size-8 text-emerald-300"/>
+              </HeroOrbit>
+              <HeroOrbit size={650} rotation={-5} shouldOrbit orbitDuration="42s">
+                  <div className="size-2 rounded-full bg-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={700} rotation={144} shouldOrbit orbitDuration="44s" shouldSpin spinDuration="3s">
+                  <SparkleIcon className="size-14 text-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={720} rotation={90} shouldOrbit orbitDuration="46s">
+                  <div className="size-3 rounded-full bg-emerald-300/20"/>
+              </HeroOrbit>
+              <HeroOrbit size={718} rotation={-72} shouldOrbit orbitDuration="48s" shouldSpin spinDuration="6s">
+                  <StarIcon className="size-28 text-emerald-300"/>
+              </HeroOrbit>
+          </div>
+
           <div className="container">
               <div className="flex flex-col items-center">
                   <Image
                       src={emojiImage}
                       className="size-[100px]"
-                      alt="Person peeking from behind laptop." />
-                  <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-                      <div className="bg-green-300 size-2.5 rounded-full"></div>
+                      alt="Person peeking from behind laptop."/>
+                  <div
+                      className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
+                      <div className="bg-green-300 size-2.5 rounded-full relative">
+                          <div className="bg-green-300 absolute inset-0 rounded-full animate-ping-large"></div>
+                      </div>
                       <div className="text-sm font-medium">Available for new projects</div>
                   </div>
               </div>
@@ -74,7 +81,8 @@ export const HeroSection = () => {
                       <span className="font-semibold">Explore my work</span>
                       <ArrowDown className="size-4"/>
                   </button>
-                  <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
+                  <button
+                      className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
                       <span>👋🏻</span>
                       <span className="font-semibold">Let's connect</span>
                   </button>
