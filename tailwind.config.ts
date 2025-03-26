@@ -24,6 +24,21 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
         serif: ["var(--font-serif)", "serif"],
+      },
+      animation: {
+        "ping-large": "ping-large 1s ease-in-out infinite",
+      },
+      keyframes: {
+        "ping-large": {
+          "75%": {  // Fix: Removed extra quotes
+            transform: "scale(3)",
+            opacity: "0",
+          },
+          "100%": {  // Fix: Removed extra quotes
+            transform: "scale(3)",
+            opacity: "0",
+          }
+        }
       }
     },
   },
