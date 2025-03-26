@@ -4,7 +4,6 @@ import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import Image from "next/image";
 import CheckCircleIcon from "@assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
-import grainImage from "@assets/images/grain.jpg";
 import {SectionHeader} from "@/components/SectionHeader";
 import {Card} from "@/components/Card";
 
@@ -53,10 +52,14 @@ export const ProjectsSection = () => {
         <div className="container">
           <SectionHeader eyebrow="Real World Result" title="Featured Projects" description="See how I transformed concepts into engaging digital experiences."/>
           <div className="flex flex-col gap-20 mt-10 md:mt-20">
-            {portfolioProjects.map(project => (
+            {portfolioProjects.map((project, projectIndex) => (
                 <Card
                     key={project.title}
-                    className="px-8 pt-8 pb-0 md:px-10 md:pt-12 lg:px-20 lg:pt-16">
+                    className="px-8 pt-8 pb-0 md:px-10 md:pt-12 lg:px-20 lg:pt-16 sticky"
+                    style={{
+                      top: `calc(64px + ${projectIndex * 40}px)`
+                    }}
+                >
 
                   <div className="lg:grid lg:grid-cols-2 lg:gap-16">
 
