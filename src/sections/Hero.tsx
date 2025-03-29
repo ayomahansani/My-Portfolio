@@ -1,8 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import emojiImage from "@assets/images/memoji-computer.png";
-import image1 from "@assets/images/WhatsApp Image 2023-12-06 at 13.47.03.jpeg";
 import ArrowDown from "@assets/icons/arrow-down.svg";
 import SparkleIcon from "@assets/icons/sparkle.svg";
 import StarIcon from "@assets/icons/star.svg";
@@ -25,16 +22,16 @@ export const HeroSection = () => {
                 <SparkleIcon className="size-8 text-pink-400/20"/>
             </HeroOrbit>
             <HeroOrbit size={440} rotation={79} shouldOrbit orbitDuration="32s" shouldSpin spinDuration="3s">
-                <SparkleIcon className="size-5 text-pink-400/20"/>
+                <SparkleIcon className="size-5 text-yellow-300/20"/>
             </HeroOrbit>
             <HeroOrbit size={520} rotation={-41} shouldOrbit orbitDuration="34s">
-                <div className="size-2 rounded-full bg-pink-400/20"/>
+                <div className="size-2 rounded-full bg-yellow-400/20"/>
             </HeroOrbit>
             <HeroOrbit size={530} rotation={178} shouldOrbit orbitDuration="36s" shouldSpin spinDuration="3s">
                 <SparkleIcon className="size-10 text-pink-400/20"/>
             </HeroOrbit>
             <HeroOrbit size={520} rotation={20} shouldOrbit orbitDuration="38s" shouldSpin spinDuration="6s">
-                <StarIcon className="size-12 text-pink-400"/>
+                <StarIcon className="size-12 text-yellow-300/20"/>
             </HeroOrbit>
             <HeroOrbit size={570} rotation={98} shouldOrbit orbitDuration="40s" shouldSpin spinDuration="6s">
                 <StarIcon className="size-8 text-pink-400"/>
@@ -43,7 +40,7 @@ export const HeroSection = () => {
                 <div className="size-2 rounded-full bg-pink-400/20"/>
             </HeroOrbit>
             <HeroOrbit size={700} rotation={144} shouldOrbit orbitDuration="44s" shouldSpin spinDuration="3s">
-                <SparkleIcon className="size-14 text-pink-400/20"/>
+                <SparkleIcon className="size-14 text-yellow-300/20"/>
             </HeroOrbit>
             <HeroOrbit size={720} rotation={90} shouldOrbit orbitDuration="46s">
                 <div className="size-3 rounded-full bg-pink-400/20"/>
@@ -82,7 +79,7 @@ export const HeroSection = () => {
                     </button>
                     <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
                         <span>👋🏻</span>
-                        <span className="font-semibold">Let's Connect</span>
+                        <span className="font-semibold">Get in Touch</span>
                     </button>
                 </motion.div>
             </div>
