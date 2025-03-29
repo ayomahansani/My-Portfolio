@@ -10,7 +10,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 
 export const HeroSection = () => {
     return (
-        <div className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+        <div className="py-32  md:py-48 lg:py-38 relative min-h-screen flex items-center justify-center text-white overflow-hidden">
             {/* Background Rings */}
             <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
                 <div className="size-[620px] hero-ring"></div>
@@ -59,25 +59,25 @@ export const HeroSection = () => {
             {/* Hero Content */}
             <div className="text-center px-6">
                 <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
-                    <Image src={image1} className="h-40 w-auto rounded-t-full" alt="Person peeking from behind laptop."/>
+                    {/*<Image src={image1} className="h-40 w-auto rounded-t-full" alt="Person peeking from behind laptop."/>*/}
                     <div className="mt-4 px-6 py-2 rounded-lg border border-gray-800 bg-gray-900/80 backdrop-blur-md flex items-center gap-3">
                         <div className="bg-yellow-300 size-2.5 rounded-full relative">
                             <div className="bg-pink-400 absolute inset-0 rounded-full animate-ping"></div>
                         </div>
-                        <span className="text-sm font-medium">Available for new projects</span>
+                        <span className="text-sm font-medium">Looking for My Next Challenge</span>
                     </div>
                 </motion.div>
 
                 <motion.h1 className="text-4xl md:text-6xl font-bold mt-6 pb-5 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-300" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3 }}>
-                    Elevating Digital Experiences
+                    Bringing Ideas to Life Through Code
                 </motion.h1>
                 <motion.p className="mt-4 text-lg text-white/70" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}>
-                    Passionate about crafting engaging and high-performance web applications.
+                    Driven to Develop Scalable and Efficient Software Solutions
                 </motion.p>
 
                 <motion.div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4" initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.9 }}>
                     <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
-                        <span className="font-semibold">View Portfolio</span>
+                        <span className="font-semibold">Check Resume</span>
                         <ArrowDown className="size-4"/>
                     </button>
                     <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
