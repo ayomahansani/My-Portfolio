@@ -1,6 +1,7 @@
-import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import floralDreamsProject from "@/assets/images/close-up-multicoloured-gerbera-flowers.jpg";
+import lightSaasLandingPage from "@/assets/images/delicious-bananas-nature.jpg";
+import aiStartupLandingPage from "@/assets/images/2149501634.jpg";
+import library from "@/assets/images/2151176471.jpg";
 import Image from "next/image";
 import CheckCircleIcon from "@assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@assets/icons/arrow-up-right.svg";
@@ -9,40 +10,52 @@ import {Card} from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    name: "Floral Dreams",
+    year: "2025",
+    title: "Flower Management System",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Streamlined inventory management" },
+      { title: "Enhanced user experience with a responsive UI" },
+      { title: "Secured data with JWT authentication" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://github.com/ayomahansani/Floral_Dreams-Frontend.git",
+    image: floralDreamsProject,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    name: "NewsFlash",
+    year: "2025",
+    title: "News Mobile App",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Real-time news updates with seamless UX" },
+      { title: "Optimized API requests with TanStack Query" },
+      { title: "Secure user data with JWT and Prisma ORM" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/ayomahansani/News-App-Frontend.git",
+    image: aiStartupLandingPage,
+  },
+  {
+    name: "Green Shadow",
+    year: "2024",
+    title: "Crop Monitoring System",
+    results: [
+      { title: "Implemented RBAC for secure user management" },
+      { title: "Secured authentication with JWT and Spring Security" },
+      { title: "Optimized database operations with Hibernate and MySQL" },
+    ],
+    link: "https://github.com/ayomahansani/Crop_Monitoring_System_Frontend_JS_With_AJAX.git",
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
+    name: "Book Worm",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "Library Management System",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Managed books, staff, and transactions with JavaFX" },
+      { title: "Secured authentication and access control" },
+      { title: "Optimized database operations with Hibernate ORM and MySQL" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://github.com/ayomahansani/Crop_Monitoring_System_Frontend_JS_With_AJAX.git",
+    image: library,
   },
 ];
 
@@ -50,7 +63,7 @@ export const ProjectsSection = () => {
   return (
       <section className="pb-16 lg:py-24">
         <div className="container">
-          <SectionHeader eyebrow="Real World Result" title="Featured Projects" description="See how I transformed concepts into engaging digital experiences."/>
+          <SectionHeader eyebrow="Tangible Outcomes" title="Featured Projects" description="Explore my journey of turning concepts into seamless and interactive solutions."/>
           <div className="flex flex-col gap-20 mt-10 md:mt-20">
             {portfolioProjects.map((project, projectIndex) => (
                 <Card
@@ -65,8 +78,8 @@ export const ProjectsSection = () => {
 
                     <div className="lg:pb-16">
 
-                      <div className="inline-flex gap-2 bg-gradient-to-r from-pink-400 to-yellow-200 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
-                        <span>{project.company}</span>
+                      <div className="inline-flex gap-2 bg-gradient-to-r from-pink-400 to-yellow-300 font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
+                        <span>{project.name}</span>
                         <span>&bull;</span>
                         <span>{project.year}</span>
                       </div>
@@ -84,7 +97,7 @@ export const ProjectsSection = () => {
                       <a href={project.link}>
                         <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8
                             md:w-auto px-6">
-                          <span className="">Visit Live Site</span>
+                          <span className="">Get Code</span>
                           <ArrowUpRightIcon className="size-4"/>
                         </button>
                       </a>
