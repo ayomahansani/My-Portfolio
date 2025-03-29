@@ -87,7 +87,7 @@ const hobbies = [
     }
 ]
 
-export const AboutSection = () => {
+export const SkillsSection = () => {
   const constraintRef = useRef(null);
   return (
       <div className="py-20 lg:py-28">
