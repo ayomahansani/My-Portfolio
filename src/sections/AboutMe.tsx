@@ -3,29 +3,35 @@ import {SectionHeader} from "@/components/SectionHeader";
 import {Card} from "@/components/Card";
 import mapImage from "@assets/images/sri-lanka-map.jpg";
 import Image from "next/image";
-import memojiGirl from "@assets/images/memoji-avatar-4.png";
+import memojiGirl from "@assets/images/memoji-avatar-girl.png";
 import {CardHeader} from "@/components/CardHeader";
 import { motion } from "framer-motion";
 import {useEffect, useRef, useState} from "react";
-import profileImage from "@assets/images/WhatsApp Image 2023-12-06 at 13.47.03.jpeg";
+import profileImage from "@assets/images/profile-image.jpeg";
 
 const titles = ["Full Stack Developer", "Programmer", "Tech Enthusiast", "Innovator"];
 const hobbies = [
     {
-        title: 'Painting',
-        emoji: '🎨',
+        title: 'Reading',
+        emoji: '‍📚️',
+        left: '45%',
+        top: '70%',
+    },
+    {
+        title: 'Dancing',
+        emoji: '💃🏻',
         left: '5%',
         top: '5%',
     },
     {
-        title: 'Photography',
-        emoji: '📷',
+        title: 'Watching Films',
+        emoji: '🎬',
         left: '50%',
         top: '5%',
     },
     {
-        title: 'Hiking',
-        emoji: '🧗🏽',
+        title: 'Travelling',
+        emoji: '🏕️',
         left: '35%',
         top: '40%',
     },
@@ -36,23 +42,18 @@ const hobbies = [
         top: '35%',
     },
     {
+        title: 'Fitness',
+        emoji: '🏋',
+        left: '5%',
+        top: '65%',
+    },
+    {
         title: 'Music',
         emoji: '🎶',
         left: '70%',
         top: '45%',
     },
-    {
-        title: 'Fitness',
-        emoji: '🏋🏼‍♀️',
-        left: '5%',
-        top: '65%',
-    },
-    {
-        title: 'Reading',
-        emoji: '‍📚️',
-        left: '45%',
-        top: '70%',
-    }
+
 ]
 
 export const AboutMeSection = () => {
@@ -73,18 +74,32 @@ export const AboutMeSection = () => {
                 <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am and what inspires me." />
 
                 {/* Main About Me Section */}
-                <div className="mt-20 flex flex-col lg:flex-row items-center gap-12">
+                <div className="mt-20 flex flex-col lg:flex-row items-center justify-center gap-12">
 
-                    {/* 3D Animated Profile Picture Outside Card */}
+                    {/* 3D Animated Rotating Profile Picture */}
                     <motion.div
-                        initial={{ scale: 0.8, rotateY: 20 }}
-                        animate={{ scale: 1, rotateY: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        whileHover={{ scale: 1.1, rotateY: -10 }}
-                        className="relative w-52 h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden shadow-xl"
+                        initial={{ scale: 0.9, rotateY: 0, rotateX: 0 }}
+                        animate={{ scale: 1, rotateY: 0, rotateX: 0 }}
+                        whileHover={{ rotateY: 10, rotateX: 10, scale: 1.05 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="relative w-52 h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden shadow-2xl bg-gradient-to-r from-pink-400 to-yellow-300 p-1"
                     >
-                        <Image src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+                        <div className="w-full h-full rounded-full overflow-hidden">
+                            <Image
+                                src={profileImage}
+                                alt="Profile"
+                                className="w-full h-full object-cover object-top rounded-full"
+                            />
+                        </div>
+
+                        {/* Subtle Glow */}
+                        <motion.div
+                            className="absolute inset-0 rounded-full"
+                            animate={{ opacity: [0.3, 0.5, 0.3] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                        />
                     </motion.div>
+
 
                     {/* Animated Profile Info inside the Card */}
                     <Card className="h-auto p-8 w-full max-w-xl flex flex-col">

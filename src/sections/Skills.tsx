@@ -9,7 +9,7 @@ import ChromeIcon from "@assets/icons/chrome.svg";
 import GithubIcon from "@assets/icons/github.svg";
 import mapImage from "@assets/images/map.png";
 import Image from "next/image";
-import memojiGirl from "@assets/images/memoji-avatar-4.png";
+import memojiGirl from "@assets/images/memoji-avatar-girl.png";
 import {CardHeader} from "@/components/CardHeader";
 import {ToolBoxItems} from "@/components/ToolBoxItems";
 import { motion } from "framer-motion";
