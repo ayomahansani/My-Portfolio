@@ -109,7 +109,7 @@ export const AboutMeSection = () => {
                             transition={{ duration: 1 }}
                             className="text-center lg:text-left"
                         >
-                            <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi.. Ayoma Hansani</h2>
+                            <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi.. I'm Ayoma Hansani</h2>
                             <p className="text-lg text-gray-400 mt-2">I am a <span className="text-pink-400">{titles[currentTitle]}</span></p>
                             <p className="mt-4 text-white/80 max-w-md">
                                 I am a dedicated software developer with a passion for creating
