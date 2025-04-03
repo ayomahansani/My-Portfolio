@@ -1,151 +1,128 @@
 "use client";
-import {SectionHeader} from "@/components/SectionHeader";
-import {Card} from "@/components/Card";
-import JavascriptIcon from "@assets/icons/square-js.svg";
-import HTMLIcon from "@assets/icons/html5.svg";
-import CSSIcon from "@assets/icons/css3.svg";
-import ReactIcon from "@assets/icons/react.svg";
-import ChromeIcon from "@assets/icons/chrome.svg";
-import GithubIcon from "@assets/icons/github.svg";
-import mapImage from "@assets/images/map.png";
+import { SectionHeader } from "@/components/SectionHeader";
+import { Tilt } from "react-tilt";
 import Image from "next/image";
-import memojiGirl from "@assets/images/memoji-avatar-girl.png";
-import {CardHeader} from "@/components/CardHeader";
-import {ToolBoxItems} from "@/components/ToolBoxItems";
-import { motion } from "framer-motion";
-import {useRef} from "react";
+import { Card } from "@/components/Card";
 
-const toolBoxItems = [
-    {
-        title: 'Javascript',
-        iconType: JavascriptIcon,
-    },
-    {
-        title: 'HTML5',
-        iconType: HTMLIcon,
-    },
-    {
-        title: 'CSS3',
-        iconType: CSSIcon,
-    },
-    {
-        title: 'React',
-        iconType: ReactIcon,
-    },
-    {
-        title: 'Chrome',
-        iconType: ChromeIcon,
-    },
-    {
-        title: 'Github',
-        iconType: GithubIcon,
-    }
-]
+import ReactIcon from "@assets/icons/react.png";
+import HtmlIcon from "@assets/icons/html5.png";
+import CSSIcon from "@assets/icons/css.png";
+import BootstrapIcon from "@assets/icons/bootstrap.png";
+import ReduxIcon from "@assets/icons/redux.png";
+import NextJsIcon from "@assets/icons/nextjs.png";
+import TailwindCSSIcon from "@assets/icons/tailwindcss.png";
+import MaterialUIIcon from "@assets/icons/material-ui.png";
 
-const hobbies = [
+import NodeIcon from "@assets/icons/nodejs.png";
+import ExpressIcon from "@assets/icons/express-js.png";
+import SpringBootIcon from "@assets/icons/spring-boot.png";
+import SpringIcon from "@assets/icons/spring.png";
+import MySQLIcon from "@assets/icons/mysql.png";
+import MongoDBIcon from "@assets/icons/mongodb.png";
+import HibernateIcon from "@assets/icons/hibernate.png";
+import PrismaIcon from "@assets/icons/prisma.png";
+
+import JavaIcon from "@assets/icons/java.png";
+import JavaScriptIcon from "@assets/icons/javascript.png";
+import TypeScriptIcon from "@assets/icons/typescript.png";
+import PythonIcon from "@assets/icons/python.png";
+
+import GitIcon from "@assets/icons/git.png";
+import GithubIcon from "@assets/icons/github.png";
+import PostmanIcon from "@assets/icons/postman.png";
+import FigmaIcon from "@assets/icons/figma.png";
+
+import KubernetesIcon from "@assets/icons/kubernetes.png";
+import DockerIcon from "@assets/icons/docker.png";
+
+const skills = [
     {
-        title: 'Painting',
-        emoji: '🎨',
-        left: '5%',
-        top: '5%',
+        title: "Frontend",
+        skills: [
+            { name: "React Js", image: ReactIcon },
+            { name: "Redux", image: ReduxIcon },
+            { name: "Next Js", image: NextJsIcon },
+            { name: "HTML", image: HtmlIcon },
+            { name: "CSS", image: CSSIcon },
+            { name: "Tailwind CSS", image: TailwindCSSIcon },
+            { name: "Bootstrap", image: BootstrapIcon },
+            { name: "Material UI", image: MaterialUIIcon },
+        ],
     },
     {
-        title: 'Photography',
-        emoji: '📷',
-        left: '50%',
-        top: '5%',
+        title: "Backend",
+        skills: [
+            { name: "Node Js", image: NodeIcon },
+            { name: "Express Js", image: ExpressIcon },
+            { name: "SpringBoot", image: SpringBootIcon },
+            { name: "Spring", image: SpringIcon },
+            { name: "MySQL", image: MySQLIcon },
+            { name: "MongoDB", image: MongoDBIcon },
+            { name: "Hibernate", image: HibernateIcon },
+            { name: "Prisma", image: PrismaIcon },
+        ],
     },
     {
-        title: 'Hiking',
-        emoji: '🧗🏽',
-        left: '35%',
-        top: '40%',
+        title: "Languages",
+        skills: [
+            { name: "Java", image: JavaIcon },
+            { name: "Javascript", image: JavaScriptIcon },
+            { name: "Typescript", image: TypeScriptIcon },
+            { name: "Python", image: PythonIcon },
+        ],
     },
     {
-        title: 'Gaming',
-        emoji: '🎮',
-        left: '10%',
-        top: '35%',
+        title: "Others",
+        skills: [
+            { name: "Git", image: GitIcon },
+            { name: "Github", image: GithubIcon },
+            { name: "Postman", image: PostmanIcon },
+            { name: "Figma", image: FigmaIcon },
+        ],
     },
     {
-        title: 'Music',
-        emoji: '🎶',
-        left: '70%',
-        top: '45%',
+        title: "DevOps",
+        skills: [
+            { name: "Kubernetes", image: KubernetesIcon },
+            { name: "Docker", image: DockerIcon },
+        ],
     },
-    {
-        title: 'Fitness',
-        emoji: '🏋🏼‍♀️',
-        left: '5%',
-        top: '65%',
-    },
-    {
-        title: 'Reading',
-        emoji: '‍📚️',
-        left: '45%',
-        top: '70%',
-    }
-]
+];
 
 export const SkillsSection = () => {
-  const constraintRef = useRef(null);
-  return (
-      <div className="py-20 lg:py-28">
-          <div className="container">
-              <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
-              <div className="mt-20 flex flex-col gap-8">
-                  <Card className="h-[320px]">
-                      <CardHeader
-                          title="My Toolbox"
-                          description="Explore the technologies and tools I use to craft exceptional digital experiences."
-                          className=""
-                      />
-                      <ToolBoxItems
-                          items={toolBoxItems}
-                          className=""
-                          itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-                      />
-                      <ToolBoxItems
-                          items={toolBoxItems}
-                          className="mt-6"
-                          itemsWrapperClassName="animate-move-right [animation-duration:15s]"
-                      />
-                  </Card>
-                  <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
-                      <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-                          <CardHeader className="px-6 py-6" title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
-                          <div className="relative flex-1" ref={constraintRef}>
-                              {hobbies.map(hobby => (
-                                  <motion.div
-                                      key={hobby.title}
-                                      className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-pink-400 to-yellow-200 rounded-full py-1.5 absolute"
-                                      style={{
-                                           left: hobby.left,
-                                           top: hobby.top,
-                                      }}
-                                      drag
-                                      dragConstraints={constraintRef}
-                                  >
-                                      <span className="font-medium text-gray-950">{hobby.title}</span>
-                                      <span>{hobby.emoji}</span>
-                                  </motion.div>
-                              ))}
-                          </div>
-                      </Card>
-                      <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-                          <Image src={mapImage} alt={"map"} className="h-full w-full object-cover object-left-top"/>
-                          <div
-                              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20
-                                        rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:outline-offset-2 after:rounded-full after:outline-gray-950/30"
-                          >
-                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-20 animate-ping [animation-duration:2s]"></div>
-                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-10"></div>
-                              <Image src={memojiGirl} alt={"girl memoji"} className="size-20"/>
-                          </div>
-                      </Card>
-                  </div>
-              </div>
-          </div>
-      </div>
-  );
+    return (
+        <div className="py-20 lg:py-28 flex flex-col items-center">
+            <div className="container">
+                <SectionHeader
+                    title="Unveiling My Expertise"
+                    eyebrow="Skills"
+                    description="A showcase of my technical proficiency."
+                />
+
+                {/* Skills Container */}
+                <div className="mt-16 flex flex-wrap justify-center gap-12">
+                    {skills.map((category, index) => (
+                        <Tilt key={index} options={{ max: 18, scale: 1.08 }}>
+                            <Card className="w-[400px] p-8 shadow-2xl shadow-pink-400/10 hover:scale-108 transition-transform border border-gray-700">
+                                <h3 className="text-3xl font-bold text-gray-400 text-center mb-6">
+                                    {category.title}
+                                </h3>
+                                <div className="flex flex-wrap justify-center gap-4">
+                                    {category.skills.map((skill, i) => (
+                                        <div
+                                            key={i}
+                                            className="flex items-center gap-2 px-5 py-3 bg-gray-900 rounded-xl shadow-lg border border-gray-700 transition hover:border-pink-400 hover:shadow-yellow-400/30"
+                                        >
+                                            <Image src={skill.image} alt={skill.name} width={28} height={28} />
+                                            <span className="text-gray-300 font-semibold">{skill.name}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Card>
+                        </Tilt>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 };
