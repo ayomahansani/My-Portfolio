@@ -2,7 +2,7 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { twMerge } from "tailwind-merge";
 
-export const Services = ({ items, className }: {
+export const ServiceCards = ({ items, className }: {
     items: {
         title: string;
         iconType: StaticImageData;

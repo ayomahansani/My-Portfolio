@@ -1,7 +1,7 @@
 "use client";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import { Services } from "@/components/Services";
+import { ServiceCards } from "@/components/ServiceCards";
 import WebDevelopment from "@assets/icons/web-development.png";
 import MobileAppDevelopment from "@assets/icons/mobile-app-development.png";
 import CustomSolutions from "@assets/icons/software-development.png";
@@ -32,12 +32,12 @@ export const ServiceSection = () => {
             <div className="container">
                 <SectionHeader
                     title="What I offer?"
-                    eyebrow="Services"
+                    eyebrow="ServiceCards"
                     description="Discover the services I provide to help bring your ideas to life with quality and efficiency."
                 />
                 <div className="mt-20 flex flex-col gap-8">
                     <Card className="h-[400px] pt-4 flex items-center justify-center">
-                        <Services
+                        <ServiceCards
                             items={services}
                             className="flex justify-center"
                         />

@@ -11,6 +11,40 @@
         @apply absolute inset-0 border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-red-300/5 shadow-[0_0_80px_inset] shadow-red-300/5;
     }
 
+    .services-container {
+        position: relative;
+        perspective: 1000px; /* Add perspective to create a 3D effect */
+        width: 100%;
+        height: 400px; /* Adjust based on your design */
+    }
+
+    .services-wrapper {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform-style: preserve-3d; /* Allow children to have 3D space */
+        animation: rotate3d 15s infinite linear; /* Infinite animation loop */
+        transform: translateX(-50%);
+    }
+
+    @keyframes rotate3d {
+        0% {
+            transform: rotateY(0deg); /* Start at 0° */
+        }
+        100% {
+            transform: rotateY(360deg); /* End at 360° */
+        }
+    }
+
+    .service-card {
+        transition: transform 1s ease-in-out; /* Smooth transitions for each card */
+    }
+
+    .service-card:hover {
+        transform: scale(1.1); /* Slightly scale the card on hover for effect */
+    }
+
+
 }
 
 @layer utilities {
