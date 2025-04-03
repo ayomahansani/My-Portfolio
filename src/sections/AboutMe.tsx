@@ -1,47 +1,15 @@
 "use client";
 import {SectionHeader} from "@/components/SectionHeader";
 import {Card} from "@/components/Card";
-import JavascriptIcon from "@assets/icons/square-js.svg";
-import HTMLIcon from "@assets/icons/html5.svg";
-import CSSIcon from "@assets/icons/css3.svg";
-import ReactIcon from "@assets/icons/react.svg";
-import ChromeIcon from "@assets/icons/chrome.svg";
-import GithubIcon from "@assets/icons/github.svg";
-import mapImage from "@assets/images/map.png";
+import mapImage from "@assets/images/sri-lanka-map.jpg";
 import Image from "next/image";
 import memojiGirl from "@assets/images/memoji-avatar-4.png";
 import {CardHeader} from "@/components/CardHeader";
-import {ToolBoxItems} from "@/components/ToolBoxItems";
 import { motion } from "framer-motion";
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
+import profileImage from "@assets/images/WhatsApp Image 2023-12-06 at 13.47.03.jpeg";
 
-const toolBoxItems = [
-    {
-        title: 'Javascript',
-        iconType: JavascriptIcon,
-    },
-    {
-        title: 'HTML5',
-        iconType: HTMLIcon,
-    },
-    {
-        title: 'CSS3',
-        iconType: CSSIcon,
-    },
-    {
-        title: 'React',
-        iconType: ReactIcon,
-    },
-    {
-        title: 'Chrome',
-        iconType: ChromeIcon,
-    },
-    {
-        title: 'Github',
-        iconType: GithubIcon,
-    }
-]
-
+const titles = ["Full Stack Developer", "Programmer", "Tech Enthusiast", "Innovator"];
 const hobbies = [
     {
         title: 'Painting',
@@ -89,28 +57,57 @@ const hobbies = [
 
 export const AboutMeSection = () => {
     const constraintRef = useRef(null);
+    const [currentTitle, setCurrentTitle] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTitle((prev) => (prev + 1) % titles.length);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, []);
+
+
     return (
         <div className="py-20 lg:py-28">
             <div className="container">
-                <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am, what I do and what inspires me." />
-                <div className="mt-20 flex flex-col gap-8">
-                    <Card className="h-[320px]">
-                        <CardHeader
-                            title="My Toolbox"
-                            description="Explore the technologies and tools I use to craft exceptional digital experiences."
-                            className=""
-                        />
-                        <ToolBoxItems
-                            items={toolBoxItems}
-                            className=""
-                            itemsWrapperClassName="animate-move-left [animation-duration:30s]"
-                        />
-                        <ToolBoxItems
-                            items={toolBoxItems}
-                            className="mt-6"
-                            itemsWrapperClassName="animate-move-right [animation-duration:15s]"
-                        />
+                <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am and what inspires me." />
+
+                {/* Main About Me Section */}
+                <div className="mt-20 flex flex-col lg:flex-row items-center gap-12">
+
+                    {/* 3D Animated Profile Picture Outside Card */}
+                    <motion.div
+                        initial={{ scale: 0.8, rotateY: 20 }}
+                        animate={{ scale: 1, rotateY: 0 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        whileHover={{ scale: 1.1, rotateY: -10 }}
+                        className="relative w-52 h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden shadow-xl"
+                    >
+                        <Image src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+                    </motion.div>
+
+                    {/* Animated Profile Info inside the Card */}
+                    <Card className="h-auto p-8 w-full max-w-xl flex flex-col">
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-center lg:text-left"
+                        >
+                            <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi.. Ayoma Hansani</h2>
+                            <p className="text-lg text-gray-400 mt-2">I am a <span className="text-pink-400">{titles[currentTitle]}</span></p>
+                            <p className="mt-4 text-white/80 max-w-md">
+                                I am a dedicated software developer with a passion for creating
+                                beautiful, efficient, and scalable applications. My journey in tech
+                                is fueled by curiosity, creativity, and a love for solving complex
+                                problems.
+                            </p>
+                        </motion.div>
                     </Card>
+
+                </div>
+
+                <div className="mt-10 flex flex-col gap-8">
                     <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
                         <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
                             <CardHeader className="px-6 py-6" title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
@@ -133,7 +130,7 @@ export const AboutMeSection = () => {
                             </div>
                         </Card>
                         <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-                            <Image src={mapImage} alt={"map"} className="h-full w-full object-cover object-left-top"/>
+                            <Image src={mapImage} alt={"map"} className="h-full w-full object-cover"/>
                             <div
                                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20
                                         rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:outline-offset-2 after:rounded-full after:outline-gray-950/30"
@@ -145,6 +142,7 @@ export const AboutMeSection = () => {
                         </Card>
                     </div>
                 </div>
+
             </div>
         </div>
     );
