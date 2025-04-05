@@ -32,7 +32,7 @@ export const ServiceSection = () => {
             <div className="container">
                 <SectionHeader
                     title="What I offer?"
-                    eyebrow="ServiceCards"
+                    eyebrow="Services"
                     description="Discover the services I provide to help bring your ideas to life with quality and efficiency."
                 />
                 <div className="mt-20 flex flex-col gap-8">
