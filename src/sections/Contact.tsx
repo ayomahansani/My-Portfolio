@@ -143,30 +143,32 @@ export const ContactSection = () => {
 
                     {/* Contact Info */}
                     <div className="w-full lg:w-1/3 flex flex-col gap-6 justify-center">
-                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-pink-400/20 flex items-center gap-4 hover:scale-105">
-                            <FaPhoneAlt className="text-yellow-300 text-2xl" />
+                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-pink-400/20 flex items-center gap-4 hover:scale-105 transition-all duration-300 ease-in-out">
+                            <FaPhoneAlt className="text-yellow-300 text-3xl animate-icon" />
                             <div>
                                 <h4 className="text-lg font-semibold">Phone</h4>
                                 <p className="text-gray-400">+94 75 183 8333</p>
                             </div>
                         </div>
 
-                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-yellow-300/20 flex items-center gap-4 hover:scale-105">
-                            <FaEnvelope className="text-pink-400 text-2xl" />
+                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-yellow-300/20 flex items-center gap-4 hover:scale-105 transition-all duration-300 ease-in-out">
+                            <FaEnvelope className="text-pink-400 text-3xl animate-icon" />
                             <div>
                                 <h4 className="text-lg font-semibold">Email</h4>
                                 <p className="text-gray-400">ayohansi17@gmail.com</p>
                             </div>
                         </div>
 
-                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-pink-400/20 flex items-center gap-4 hover:scale-105">
-                            <FaMapMarkerAlt className="text-yellow-300 text-2xl" />
+                        <div className="p-6 bg-gray-800 rounded-lg shadow-lg shadow-pink-400/20 flex items-center gap-4 hover:scale-105 transition-all duration-300 ease-in-out">
+                            <FaMapMarkerAlt className="text-yellow-300 text-3xl animate-icon" />
                             <div>
                                 <h4 className="text-lg font-semibold">Address</h4>
                                 <p className="text-gray-400">Kadawatha, Western Province</p>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
