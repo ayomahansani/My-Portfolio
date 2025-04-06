@@ -113,7 +113,7 @@ export const AboutMeSection = () => {
                                 className="text-center lg:text-left"
                             >
                                 <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi..
-                                    I'm Ayoma Hansani</h2>
+                                    I&rsquo;m Ayoma Hansani</h2>
                                 <span className="text-lg mt-2 text-pink-400 font-semibold">
                                 <Typewriter options={{
                                     strings: titles,
