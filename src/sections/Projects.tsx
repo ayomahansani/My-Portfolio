@@ -54,7 +54,7 @@ const portfolioProjects = [
       { title: "Secured authentication and access control" },
       { title: "Optimized database operations with Hibernate ORM and MySQL" },
     ],
-    link: "https://github.com/ayomahansani/Crop_Monitoring_System_Frontend_JS_With_AJAX.git",
+    link: "https://github.com/ayomahansani/ORM-Online-Library-Management-System.git",
     image: library,
   },
 ];
