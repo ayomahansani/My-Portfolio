@@ -28,22 +28,24 @@ const services = [
 
 export const ServiceSection = () => {
     return (
-        <div className="py-20 lg:py-28">
-            <div className="container">
-                <SectionHeader
-                    title="What I offer?"
-                    eyebrow="Services"
-                    description="Discover the services I provide to help bring your ideas to life with quality and efficiency."
-                />
-                <div className="mt-20 flex flex-col gap-8">
-                    <Card className="h-[400px] pt-4 flex items-center justify-center">
-                        <ServiceCards
-                            items={services}
-                            className="flex justify-center"
-                        />
-                    </Card>
+        <section id="ServiceSection">
+            <div className="py-20 lg:py-28">
+                <div className="container">
+                    <SectionHeader
+                        title="What I offer?"
+                        eyebrow="Services"
+                        description="Discover the services I provide to help bring your ideas to life with quality and efficiency."
+                    />
+                    <div className="mt-20 flex flex-col gap-8">
+                        <Card className="h-[400px] pt-4 flex items-center justify-center">
+                            <ServiceCards
+                                items={services}
+                                className="flex justify-center"
+                            />
+                        </Card>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

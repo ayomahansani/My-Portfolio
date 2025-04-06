@@ -70,102 +70,109 @@ export const AboutMeSection = () => {
 
 
     return (
-        <div className="py-20 lg:py-28">
-            <div className="container">
-                <SectionHeader title="A Glimps Into My World" eyebrow="About Me" description="Learn more about who I am and what inspires me." />
+        <section id="AboutMe">
+            <div className="py-20 lg:py-28">
+                <div className="container">
+                    <SectionHeader title="A Glimps Into My World" eyebrow="About Me"
+                                   description="Learn more about who I am and what inspires me."/>
 
-                {/* Main About Me Section */}
-                <div className="mt-20 flex flex-col lg:flex-row items-center justify-center gap-12">
+                    {/* Main About Me Section */}
+                    <div className="mt-20 flex flex-col lg:flex-row items-center justify-center gap-12">
 
-                    {/* 3D Animated Rotating Profile Picture */}
-                    <motion.div
-                        initial={{ scale: 0.9, rotateY: 0, rotateX: 0 }}
-                        animate={{ scale: 1, rotateY: 0, rotateX: 0 }}
-                        whileHover={{ rotateY: 10, rotateX: 10, scale: 1.05 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="relative w-52 h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden shadow-2xl bg-gradient-to-r from-pink-400 to-yellow-300 p-1"
-                    >
-                        <div className="w-full h-full rounded-full overflow-hidden">
-                            <Image
-                                src={profileImage}
-                                alt="Profile"
-                                className="w-full h-full object-cover object-top rounded-full"
-                            />
-                        </div>
-
-                        {/* Subtle Glow */}
+                        {/* 3D Animated Rotating Profile Picture */}
                         <motion.div
-                            className="absolute inset-0 rounded-full"
-                            animate={{ opacity: [0.3, 0.5, 0.3] }}
-                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        />
-                    </motion.div>
-
-
-                    {/* Animated Profile Info inside the Card */}
-                    <Card className="h-auto p-8 w-full max-w-xl flex flex-col">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 1 }}
-                            className="text-center lg:text-left"
+                            initial={{scale: 0.9, rotateY: 0, rotateX: 0}}
+                            animate={{scale: 1, rotateY: 0, rotateX: 0}}
+                            whileHover={{rotateY: 10, rotateX: 10, scale: 1.05}}
+                            transition={{duration: 0.5, ease: "easeOut"}}
+                            className="relative w-52 h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden shadow-2xl bg-gradient-to-r from-pink-400 to-yellow-300 p-1"
                         >
-                            <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi.. I'm Ayoma Hansani</h2>
-                            <span className="text-lg mt-2 text-pink-400 font-semibold">
+                            <div className="w-full h-full rounded-full overflow-hidden">
+                                <Image
+                                    src={profileImage}
+                                    alt="Profile"
+                                    className="w-full h-full object-cover object-top rounded-full"
+                                />
+                            </div>
+
+                            {/* Subtle Glow */}
+                            <motion.div
+                                className="absolute inset-0 rounded-full"
+                                animate={{opacity: [0.3, 0.5, 0.3]}}
+                                transition={{duration: 5, repeat: Infinity, ease: "easeInOut"}}
+                            />
+                        </motion.div>
+
+
+                        {/* Animated Profile Info inside the Card */}
+                        <Card className="h-auto p-8 w-full max-w-xl flex flex-col">
+                            <motion.div
+                                initial={{opacity: 0, x: -50}}
+                                animate={{opacity: 1, x: 0}}
+                                transition={{duration: 1}}
+                                className="text-center lg:text-left"
+                            >
+                                <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi..
+                                    I'm Ayoma Hansani</h2>
+                                <span className="text-lg mt-2 text-pink-400 font-semibold">
                                 <Typewriter options={{
                                     strings: titles,
                                     autoStart: true,
                                     loop: true,
                                 }}/>
                             </span>
-                            <p className="mt-4 text-white/80 max-w-md">
-                                I am a dedicated software student with a passion for creating
-                                beautiful, efficient, and scalable applications. My journey in tech
-                                is fueled by curiosity, creativity, and a love for solving complex
-                                problems.
-                            </p>
-                        </motion.div>
-                    </Card>
-
-                </div>
-
-                <div className="mt-10 flex flex-col gap-8">
-                    <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
-                        <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
-                            <CardHeader className="px-6 py-6" title="Beyond the Code" description="Explore my interests and hobbies beyond the digital realm." />
-                            <div className="relative flex-1" ref={constraintRef}>
-                                {hobbies.map(hobby => (
-                                    <motion.div
-                                        key={hobby.title}
-                                        className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-pink-400 to-yellow-200 rounded-full py-1.5 absolute"
-                                        style={{
-                                            left: hobby.left,
-                                            top: hobby.top,
-                                        }}
-                                        drag
-                                        dragConstraints={constraintRef}
-                                    >
-                                        <span className="font-medium text-gray-950">{hobby.title}</span>
-                                        <span>{hobby.emoji}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
+                                <p className="mt-4 text-white/80 max-w-md">
+                                    I am a dedicated software student with a passion for creating
+                                    beautiful, efficient, and scalable applications. My journey in tech
+                                    is fueled by curiosity, creativity, and a love for solving complex
+                                    problems.
+                                </p>
+                            </motion.div>
                         </Card>
-                        <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
-                            <Image src={mapImage} alt={"map"} className="h-full w-full object-cover"/>
-                            <div
-                                className="absolute top-2/3 right-1/3 -translate-x-1/2 -translate-y-1/2 size-20
-                                        rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:outline-offset-2 after:rounded-full after:outline-gray-950/30"
-                            >
-                                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-20 animate-ping [animation-duration:2s]"></div>
-                                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-10"></div>
-                                <Image src={memojiGirl} alt={"girl memoji"} className="size-20 object-left"/>
-                            </div>
-                        </Card>
+
                     </div>
-                </div>
 
+                    <div className="mt-10 flex flex-col gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
+                            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+                                <CardHeader className="px-6 py-6" title="Beyond the Code"
+                                            description="Explore my interests and hobbies beyond the digital realm."/>
+                                <div className="relative flex-1" ref={constraintRef}>
+                                    {hobbies.map(hobby => (
+                                        <motion.div
+                                            key={hobby.title}
+                                            className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-pink-400 to-yellow-200 rounded-full py-1.5 absolute"
+                                            style={{
+                                                left: hobby.left,
+                                                top: hobby.top,
+                                            }}
+                                            drag
+                                            dragConstraints={constraintRef}
+                                        >
+                                            <span className="font-medium text-gray-950">{hobby.title}</span>
+                                            <span>{hobby.emoji}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </Card>
+                            <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+                                <Image src={mapImage} alt={"map"} className="h-full w-full object-cover"/>
+                                <div
+                                    className="absolute top-2/3 right-1/3 -translate-x-1/2 -translate-y-1/2 size-20
+                                        rounded-full after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:outline-offset-2 after:rounded-full after:outline-gray-950/30"
+                                >
+                                    <div
+                                        className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-20 animate-ping [animation-duration:2s]"></div>
+                                    <div
+                                        className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 to-yellow-200 -z-10"></div>
+                                    <Image src={memojiGirl} alt={"girl memoji"} className="size-20 object-left"/>
+                                </div>
+                            </Card>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
