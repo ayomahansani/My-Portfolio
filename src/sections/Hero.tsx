@@ -64,7 +64,6 @@ export const HeroSection = () => {
                 <div className="text-center px-6">
                     <motion.div initial={{opacity: 0, y: -50}} animate={{opacity: 1, y: 0}} transition={{duration: 0.8}}
                                 className="flex flex-col items-center">
-                        {/*<Image src={image1} className="h-40 w-auto rounded-t-full" alt="Person peeking from behind laptop."/>*/}
                         <div
                             className="mt-4 px-6 py-2 rounded-lg border border-gray-800 bg-gray-900/80 backdrop-blur-md flex items-center gap-3">
                             <div className="bg-yellow-300 size-2.5 rounded-full relative">
@@ -85,19 +84,25 @@ export const HeroSection = () => {
                         Driven to Develop Scalable and Efficient Software Solutions
                     </motion.p>
 
-                    <motion.div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4"
-                                initial={{opacity: 0, y: 50}} animate={{opacity: 1, y: 0}}
-                                transition={{duration: 0.8, delay: 0.9}}>
-                        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+                    {/* Buttons */}
+                    {/*<motion.div
+                        className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4"
+                        initial={{opacity: 0, y: 50}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.8, delay: 0.9}}
+                    >
+                        <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl hover:bg-yellow-300">
                             <span className="font-semibold">Check Resume</span>
                             <ArrowDown className="size-4"/>
                         </button>
-                        <button
-                            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl">
+
+                        <a href="#ContactSection"
+                           className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 px-6 h-12 rounded-xl hover:bg-yellow-300">
                             <span>👋🏻</span>
                             <span className="font-semibold">Get in Touch</span>
-                        </button>
-                    </motion.div>
+                        </a>
+
+                    </motion.div>*/}
                 </div>
             </div>
         </section>
