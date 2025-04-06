@@ -8,8 +8,9 @@ import {CardHeader} from "@/components/CardHeader";
 import { motion } from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import profileImage from "@assets/images/profile-image.jpeg";
+import Typewriter from "typewriter-effect";
 
-const titles = ["Full Stack Developer", "Programmer", "Tech Enthusiast", "Innovator"];
+const titles = ["Full Stack Developer ...", "Programmer ...", "Tech Enthusiast ...", "Innovator ..."];
 const hobbies = [
     {
         title: 'Reading',
@@ -110,9 +111,15 @@ export const AboutMeSection = () => {
                             className="text-center lg:text-left"
                         >
                             <h2 className="text-4xl font-bold bg-gradient-to-r from-yellow-200 to-pink-300 text-transparent bg-clip-text">Hi.. I'm Ayoma Hansani</h2>
-                            <p className="text-lg text-gray-400 mt-2">I am a <span className="text-pink-400">{titles[currentTitle]}</span></p>
+                            <span className="text-lg mt-2 text-pink-400 font-semibold">
+                                <Typewriter options={{
+                                    strings: titles,
+                                    autoStart: true,
+                                    loop: true,
+                                }}/>
+                            </span>
                             <p className="mt-4 text-white/80 max-w-md">
-                                I am a dedicated software developer with a passion for creating
+                                I am a dedicated software student with a passion for creating
                                 beautiful, efficient, and scalable applications. My journey in tech
                                 is fueled by curiosity, creativity, and a love for solving complex
                                 problems.
