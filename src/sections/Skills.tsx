@@ -111,7 +111,7 @@ export const SkillsSection = () => {
                                     {category.skills.map((skill, i) => (
                                         <div
                                             key={i}
-                                            className="flex items-center gap-2 md:gap-3 px-4 py-2 md:px-5 md:py-3 lg:px-5 lg:py-3 bg-gray-900 rounded-xl shadow-lg border border-gray-700 transition hover:border-pink-400 hover:shadow-yellow-400/30"
+                                            className="flex items-center gap-2 px-4 py-2 md:px-5 md:py-3 lg:px-5 lg:py-3 bg-gray-900 rounded-xl shadow-lg border border-gray-700 transition hover:border-pink-400 hover:shadow-yellow-400/30"
                                         >
                                             <Image src={skill.image} alt={skill.name} width={28} height={28} />
                                             <span className="text-gray-300 font-semibold">{skill.name}</span>
