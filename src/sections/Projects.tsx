@@ -96,7 +96,7 @@ export const ProjectsSection = () => {
                       </ul>
                       <a href={project.link}>
                         <button className="bg-white text-gray-950 h-12 w-full rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8
-                            md:w-auto px-6">
+                            md:w-auto px-6 hover:bg-gradient-to-r from-pink-400 to-yellow-300 ">
                           <span className="">Get Code</span>
                           <ArrowUpRightIcon className="size-4"/>
                         </button>
