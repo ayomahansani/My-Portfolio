@@ -24,8 +24,8 @@ const hobbies = [
         top: '5%',
     },
     {
-        title: 'Watching Films',
-        emoji: '🎬',
+        title: 'Swimming',
+        emoji: '🏊🏻‍♀️',
         left: '50%',
         top: '5%',
     },
