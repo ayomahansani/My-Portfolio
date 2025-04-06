@@ -46,7 +46,7 @@ export const Footer = () => {
 
             {/* Apple Logo */}
             <a
-                href="https://www.apple.com"
+                href="sms:+94751838333"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl sm:text-3xl text-white hover:bg-gradient-to-r from-pink-400 to-yellow-300 hover:text-gray-900 p-3 rounded-full transition-all duration-300 transform hover:scale-110"
